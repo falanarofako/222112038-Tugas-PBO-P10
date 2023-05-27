@@ -9,7 +9,10 @@ package week10;
  * @author PC
  */
 public class NewJFrame extends javax.swing.JFrame {
-
+    private long hitungKarakter = 0;
+    private long hitungBaris = 0;
+    private long hitungVokal = 0;
+    private long hitungKonsonan = 0;
     /**
      * Creates new form NewJFrame
      */
@@ -147,6 +150,25 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void hitungChar (String content){
+        hitungKarakter = content.chars()
+                .filter(c -> c != ' ' && c != '\n')
+                .count();
+        
+        hitungBaris = contentTextArea.getLineCount();
+        
+        hitungVokal = content.chars()
+                .mapToObj(ch -> (char) ch)
+                .filter(ch -> "AIUEOaiueo".contains(ch.toString()))
+                .count();
+        
+        hitungKonsonan = content.chars()
+                .mapToObj(ch -> (char) ch)
+                .filter(ch -> Character.isLetter(ch) && 
+                        !"AEIOUaeiou".contains(ch.toString()))
+                .count();
+    }
+    
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItemActionPerformed
