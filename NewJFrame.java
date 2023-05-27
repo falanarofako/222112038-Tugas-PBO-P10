@@ -5,7 +5,10 @@
 package week10;
 
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -223,7 +226,43 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }
         
-    
+    private void bukaFile(){
+        JFileChooser choose = new JFileChooser();
+        int returnValue = choose.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectFile = choose.getSelectedFile();
+            if (selectFile != null) {
+                String fileName = selectFile.getName();
+                String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+                if (!extension.equalsIgnoreCase("txt")) {
+                    // The selected file is a .txt file
+                    JOptionPane.showMessageDialog(null, "Format file salah!", "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                } else {
+                    // The selected file is not a .txt file
+                    try {
+                        FileReader reader = new FileReader(selectFile);
+                        BufferedReader br = new BufferedReader(reader, 16384);
+
+                        String str = "";
+                        String strRead = "";
+                        while ((strRead = br.readLine()) != null) {
+                            str = str + strRead + '\n';
+                        }
+                        str = str.substring(0, str.length()-1);
+                        contentTextArea.setText(str);
+                        br.close();
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Terjadi Error!.", "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                    }
+
+                }
+            }
+        }
+    }
+        
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItemActionPerformed
