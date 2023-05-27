@@ -26,12 +26,43 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        contentTextArea = new javax.swing.JTextArea();
+        prosesButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
+        saveProsesTextButton = new javax.swing.JButton();
+        jumlahKarakterLabel = new javax.swing.JLabel();
+        jumlahBarisLabel = new javax.swing.JLabel();
+        jumlahKarakterTextField = new javax.swing.JTextField();
+        jumlahBarisTextField = new javax.swing.JTextField();
+        jumlahVokalLabel = new javax.swing.JLabel();
+        jumlahKonsonanLabel = new javax.swing.JLabel();
+        jumlahKarakterTextField1 = new javax.swing.JTextField();
+        jumlahKarakterTextField2 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        contentTextArea.setColumns(20);
+        contentTextArea.setRows(5);
+        jScrollPane1.setViewportView(contentTextArea);
+
+        prosesButton.setText("Proses Text");
+
+        clearButton.setText("Clear Text Area");
+
+        saveProsesTextButton.setText("Save Proses Text (*.txt)");
+
+        jumlahKarakterLabel.setText("Jumlah Karakter Di luar Spasi :");
+
+        jumlahBarisLabel.setText("Jumlah Baris :");
+
+        jumlahVokalLabel.setText("Jumlah Huruf Vokal :");
+
+        jumlahKonsonanLabel.setText("Jumlah Huruf Konsonan :");
 
         jMenu1.setText("File");
 
@@ -54,11 +85,63 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(prosesButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(clearButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jumlahBarisLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jumlahBarisTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jumlahKarakterLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(jumlahKarakterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(saveProsesTextButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jumlahKonsonanLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jumlahKarakterTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 1, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jumlahVokalLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jumlahKarakterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prosesButton)
+                    .addComponent(clearButton)
+                    .addComponent(saveProsesTextButton))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jumlahKarakterLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jumlahKarakterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jumlahVokalLabel)
+                        .addComponent(jumlahKarakterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jumlahBarisLabel)
+                    .addComponent(jumlahBarisTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jumlahKonsonanLabel)
+                    .addComponent(jumlahKarakterTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,9 +187,22 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearButton;
+    private javax.swing.JTextArea contentTextArea;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jumlahBarisLabel;
+    private javax.swing.JTextField jumlahBarisTextField;
+    private javax.swing.JLabel jumlahKarakterLabel;
+    private javax.swing.JTextField jumlahKarakterTextField;
+    private javax.swing.JTextField jumlahKarakterTextField1;
+    private javax.swing.JTextField jumlahKarakterTextField2;
+    private javax.swing.JLabel jumlahKonsonanLabel;
+    private javax.swing.JLabel jumlahVokalLabel;
     private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JButton prosesButton;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JButton saveProsesTextButton;
     // End of variables declaration//GEN-END:variables
 }

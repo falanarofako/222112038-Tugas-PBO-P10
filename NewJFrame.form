@@ -50,13 +50,138 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="450" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="prosesButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="clearButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jumlahBarisLabel" min="-2" pref="159" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jumlahBarisTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jumlahKarakterLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jumlahKarakterTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="saveProsesTextButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jumlahKonsonanLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jumlahKarakterTextField2" min="-2" pref="71" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jumlahVokalLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jumlahKarakterTextField1" min="-2" pref="71" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="297" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jScrollPane1" min="-2" pref="170" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="prosesButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="clearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="saveProsesTextButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jumlahKarakterLabel" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jumlahKarakterTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jumlahVokalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jumlahKarakterTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jumlahBarisLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jumlahBarisTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jumlahKonsonanLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jumlahKarakterTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="contentTextArea">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="prosesButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Proses Text"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="clearButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear Text Area"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="saveProsesTextButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save Proses Text (*.txt)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jumlahKarakterLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jumlah Karakter Di luar Spasi :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jumlahBarisLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jumlah Baris :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jumlahKarakterTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jumlahBarisTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jumlahVokalLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jumlah Huruf Vokal :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jumlahKonsonanLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jumlah Huruf Konsonan :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jumlahKarakterTextField1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jumlahKarakterTextField2">
+    </Component>
+  </SubComponents>
 </Form>
