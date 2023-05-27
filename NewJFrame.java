@@ -4,6 +4,13 @@
  */
 package week10;
 
+import java.awt.event.ActionEvent;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
@@ -40,8 +47,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jumlahBarisTextField = new javax.swing.JTextField();
         jumlahVokalLabel = new javax.swing.JLabel();
         jumlahKonsonanLabel = new javax.swing.JLabel();
-        jumlahKarakterTextField1 = new javax.swing.JTextField();
-        jumlahKarakterTextField2 = new javax.swing.JTextField();
+        jumlahVokalTextField = new javax.swing.JTextField();
+        jumlahKonsonanTextField = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -54,6 +61,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(contentTextArea);
 
         prosesButton.setText("Proses Text");
+        prosesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prosesButtonActionPerformed(evt);
+            }
+        });
 
         clearButton.setText("Clear Text Area");
 
@@ -114,12 +126,12 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jumlahKonsonanLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jumlahKarakterTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jumlahKonsonanTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 1, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jumlahVokalLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jumlahKarakterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jumlahVokalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -137,13 +149,13 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jumlahKarakterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jumlahVokalLabel)
-                        .addComponent(jumlahKarakterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jumlahVokalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jumlahBarisLabel)
                     .addComponent(jumlahBarisTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jumlahKonsonanLabel)
-                    .addComponent(jumlahKarakterTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jumlahKonsonanTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -169,9 +181,56 @@ public class NewJFrame extends javax.swing.JFrame {
                 .count();
     }
     
+    private void tampilkanPenghitungan(){
+        jumlahKarakterTextField.setText(Long.toString(hitungKarakter));
+        jumlahBarisTextField.setText(Long.toString(hitungBaris));
+        jumlahVokalTextField.setText(Long.toString(hitungVokal));
+        jumlahKonsonanTextField.setText(Long.toString(hitungKonsonan));
+    }
+ 
+        private void simpanPenghitungan(){
+        ActionEvent event = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "");
+        prosesButtonActionPerformed(event);
+        
+        String filePath = "output.txt";
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Write content to the file
+            writer.write("Hasil Proses Teks");
+            writer.newLine();
+            
+            writer.write("=================");
+            writer.newLine();
+            
+            
+            writer.write("Jumlah Karakter (diluar Spasi): " + Long.toString(hitungKarakter));
+            writer.newLine();
+            
+            writer.write("Jumlah Baris: " + Long.toString(hitungBaris));
+            writer.newLine();
+            
+            writer.write("Jumlah Huruf Vokal: " + Long.toString(hitungVokal));
+            writer.newLine();
+            
+            writer.write("Jumlah Huruf Konsonan: " + Long.toString(hitungKonsonan));
+            writer.newLine();
+
+            writer.flush();
+            
+            JOptionPane.showMessageDialog(this, "Berhasil disimpan!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        
+    
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItemActionPerformed
+
+    private void prosesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prosesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,10 +277,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jumlahBarisTextField;
     private javax.swing.JLabel jumlahKarakterLabel;
     private javax.swing.JTextField jumlahKarakterTextField;
-    private javax.swing.JTextField jumlahKarakterTextField1;
-    private javax.swing.JTextField jumlahKarakterTextField2;
     private javax.swing.JLabel jumlahKonsonanLabel;
+    private javax.swing.JTextField jumlahKonsonanTextField;
     private javax.swing.JLabel jumlahVokalLabel;
+    private javax.swing.JTextField jumlahVokalTextField;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JButton prosesButton;
     private javax.swing.JMenuItem saveMenuItem;

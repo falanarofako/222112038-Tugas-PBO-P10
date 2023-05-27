@@ -81,13 +81,13 @@
                           <Group type="102" attributes="0">
                               <Component id="jumlahKonsonanLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jumlahKarakterTextField2" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="jumlahKonsonanTextField" min="-2" pref="71" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jumlahVokalLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jumlahKarakterTextField1" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="jumlahVokalTextField" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -112,7 +112,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jumlahKarakterTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jumlahVokalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jumlahKarakterTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jumlahVokalTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -120,7 +120,7 @@
                   <Component id="jumlahBarisLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jumlahBarisTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jumlahKonsonanLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jumlahKarakterTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jumlahKonsonanTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
@@ -144,6 +144,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Proses Text"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prosesButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="clearButton">
       <Properties>
@@ -179,9 +182,9 @@
         <Property name="text" type="java.lang.String" value="Jumlah Huruf Konsonan :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jumlahKarakterTextField1">
+    <Component class="javax.swing.JTextField" name="jumlahVokalTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jumlahKarakterTextField2">
+    <Component class="javax.swing.JTextField" name="jumlahKonsonanTextField">
     </Component>
   </SubComponents>
 </Form>
