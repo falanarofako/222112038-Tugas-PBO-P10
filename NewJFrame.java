@@ -61,6 +61,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         contentTextArea.setColumns(20);
         contentTextArea.setRows(5);
+        contentTextArea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contentTextAreaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(contentTextArea);
 
         prosesButton.setText("Proses Text");
@@ -71,8 +76,18 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         clearButton.setText("Clear Text Area");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
 
         saveProsesTextButton.setText("Save Proses Text (*.txt)");
+        saveProsesTextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveProsesTextButtonActionPerformed(evt);
+            }
+        });
 
         jumlahKarakterLabel.setText("Jumlah Karakter Di luar Spasi :");
 
@@ -85,6 +100,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         openMenuItem.setText("Open (*.txt)");
+        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenuItemActionPerformed(evt);
+            }
+        });
         jMenu1.add(openMenuItem);
 
         saveMenuItem.setText("Save (*.txt)");
@@ -262,14 +282,45 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         }
     }
+    
+    
         
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
         // TODO add your handling code here:
+        simpanPenghitungan();
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void prosesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesButtonActionPerformed
         // TODO add your handling code here:
+        String content = contentTextArea.getText();
+        
+        hitungChar(content);
+        tampilkanPenghitungan();
     }//GEN-LAST:event_prosesButtonActionPerformed
+
+    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+        // TODO add your handling code here:
+        bukaFile();
+    }//GEN-LAST:event_openMenuItemActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        // TODO add your handling code here:
+        contentTextArea.setText("");
+        jumlahKarakterTextField.setText("");
+        jumlahBarisTextField.setText("");
+        jumlahVokalTextField.setText("");
+        jumlahKonsonanTextField.setText("");    
+    }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void saveProsesTextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveProsesTextButtonActionPerformed
+        // TODO add your handling code here:
+        simpanPenghitungan();
+    }//GEN-LAST:event_saveProsesTextButtonActionPerformed
+
+    private void contentTextAreaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contentTextAreaMouseClicked
+        // TODO add your handling code here:
+        contentTextArea.setFocusable(true);
+    }//GEN-LAST:event_contentTextAreaMouseClicked
 
     /**
      * @param args the command line arguments
